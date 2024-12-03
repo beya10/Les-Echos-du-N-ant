@@ -1,0 +1,19 @@
+@inject NavigationManager NavigationManager
+@page "/menu-principal"
+
+<h1>Menu Principal</h1>
+<button @onclick="NouvellePartie">Nouvelle Partie</button>
+<button @onclick='() => NavigationManager.NavigateTo("/choix-perso")'>Choisir un perssonnage</button>
+<button @onclick="Quitter">Quitter</button>
+
+@code {
+    private void NouvellePartie()
+    {
+        NavigationManager.NavigateTo("/nouvelle-partie");
+    }
+
+    private void Quitter()
+    {
+        Console.WriteLine("Application quittée !");
+    }
+}
