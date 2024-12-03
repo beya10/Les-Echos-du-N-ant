@@ -1,0 +1,21 @@
+@page "/choix-perso";
+
+<h1>Choisissez votre personnage</h1>
+<div>
+    <button @onclick='() => ChoisirPerso("Guerrier")'>Guerrier</button>
+    <button @onclick='() => ChoisirPerso("Archer")'>Archer</button>
+    <button @onclick='() => ChoisirPerso("Mage")'>Mage</button>
+
+</div>
+
+<p>@Message</p>
+
+@code
+{
+    private string Message;
+
+    private void ChoisirPerso(string personnage)
+    {
+        Message = $"Vous avez choisi : {personnage}";
+    }
+}

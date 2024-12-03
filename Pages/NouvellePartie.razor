@@ -1,0 +1,21 @@
+@page "/nouvelle-partie"
+@using lesEchoDuNeant.Models
+
+<h1>Nouvelle Partie</h1>
+
+<p> Bienvenue dans votre Aventure !</p>
+
+<button @onclick="NavVersCombat">Commencer un combat</button>
+
+
+@code
+{
+    [Inject]
+    private NavigationManager NavigationManager{get;set;}
+
+    private void NavVersCombat()
+    {
+        NavigationManager.NavigateTo("/combat");
+    }
+}
+   
