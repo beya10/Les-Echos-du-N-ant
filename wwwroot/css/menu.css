@@ -35,3 +35,24 @@ li {
     border-radius: 5px;
     font-size: 18px;
 }
+
+/* style spécifique pour la carte */
+.map-container{
+    display: grid;
+    margin: 0 auto;
+    width: 100%; /*Utilise toute la largeur de l'écran*/
+    height: 100vh; /*Limite la carte à la hauteur de l'écran*/
+    grid-template-columns: repeat(auto-fit,minmax(50px,1fr));/*Ajuste les colonne en fonction de l'espace*/
+    grid-auto-rows: 1fr;/*Assure que les lignes reste proportionnel*/
+}
+
+.map-container div{
+    border: 0.2px solid rgba(255, 255, 255, 0.5);
+    background-size: cover;
+    aspect-ratio: 1; /*Garde les cellules carré*/
+}
+
+.map-container div:hover{
+    outline: 2px solid #3498db;
+    cursor: pointer; /*Change le curseur pour indiquer l'interaction*/
+}

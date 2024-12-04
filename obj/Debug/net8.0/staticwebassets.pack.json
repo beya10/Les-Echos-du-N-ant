@@ -57,6 +57,18 @@
       "PackagePath": "staticwebassets/favicon.ico"
     },
     {
+      "Id": "/home/blacky/Documents/Etudes/Bac/2_ieme/Progra/C#/Exo_second_2/lesEchoDuNeant/wwwroot/images/eau.webp",
+      "PackagePath": "staticwebassets/images/eau.webp"
+    },
+    {
+      "Id": "/home/blacky/Documents/Etudes/Bac/2_ieme/Progra/C#/Exo_second_2/lesEchoDuNeant/wwwroot/images/herbe.webp",
+      "PackagePath": "staticwebassets/images/herbe.webp"
+    },
+    {
+      "Id": "/home/blacky/Documents/Etudes/Bac/2_ieme/Progra/C#/Exo_second_2/lesEchoDuNeant/wwwroot/images/montagne.webp",
+      "PackagePath": "staticwebassets/images/montagne.webp"
+    },
+    {
       "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.lesEchoDuNeant.props",
       "PackagePath": "build\\lesEchoDuNeant.props"
     },

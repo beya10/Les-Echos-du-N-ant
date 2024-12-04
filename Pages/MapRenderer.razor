@@ -1,0 +1,14 @@
+@using lesEchoDuNeant.Map;
+@* Composant responsable d'afficher la carte dans l'interface utilisateur *@
+<div class="map-container" style="grid-template-columns: repeat(@Map.Largeur, 1fr);">
+    @foreach (var cellule in Map.Cellules)
+    {
+        <div style="background-image: url(@cellule.Image)"></div>
+    }
+</div>
+
+@code
+{
+    [Parameter]
+    public Map Map{get; set;}
+}

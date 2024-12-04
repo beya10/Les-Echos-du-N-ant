@@ -46,6 +46,7 @@
 /home/blacky/Documents/Etudes/Bac/2_ieme/Progra/C#/Exo_second_2/lesEchoDuNeant/obj/Debug/net8.0/lesEchoDuNeant.MvcApplicationPartsAssemblyInfo.cache
 /home/blacky/Documents/Etudes/Bac/2_ieme/Progra/C#/Exo_second_2/lesEchoDuNeant/obj/Debug/net8.0/lesEchoDuNeant.RazorAssemblyInfo.cache
 /home/blacky/Documents/Etudes/Bac/2_ieme/Progra/C#/Exo_second_2/lesEchoDuNeant/obj/Debug/net8.0/lesEchoDuNeant.RazorAssemblyInfo.cs
+/home/blacky/Documents/Etudes/Bac/2_ieme/Progra/C#/Exo_second_2/lesEchoDuNeant/obj/Debug/net8.0/lesEchoDuNeant.sourcelink.json
 /home/blacky/Documents/Etudes/Bac/2_ieme/Progra/C#/Exo_second_2/lesEchoDuNeant/obj/Debug/net8.0/staticwebassets.build.json
 /home/blacky/Documents/Etudes/Bac/2_ieme/Progra/C#/Exo_second_2/lesEchoDuNeant/obj/Debug/net8.0/staticwebassets.development.json
 /home/blacky/Documents/Etudes/Bac/2_ieme/Progra/C#/Exo_second_2/lesEchoDuNeant/obj/Debug/net8.0/staticwebassets/msbuild.lesEchoDuNeant.Microsoft.AspNetCore.StaticWebAssets.props

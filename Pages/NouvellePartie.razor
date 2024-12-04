@@ -1,21 +1,17 @@
 @page "/nouvelle-partie"
 @using lesEchoDuNeant.Models
 
-<h1>Nouvelle Partie</h1>
-
-<p> Bienvenue dans votre Aventure !</p>
-
-<button @onclick="NavVersCombat">Commencer un combat</button>
-
+@*Composant MapRenderer pour afficher la carte*@
+<MapRenderer Map=Map />
 
 @code
 {
-    [Inject]
-    private NavigationManager NavigationManager{get;set;}
+    private lesEchoDuNeant.Map.Map Map;
 
-    private void NavVersCombat()
+    protected override void OnInitialized()
     {
-        NavigationManager.NavigateTo("/combat");
+        // Génére une carte de 10x10
+        Map = new lesEchoDuNeant.Map.Map(10, 10); // Carte 10x10
     }
 }
    

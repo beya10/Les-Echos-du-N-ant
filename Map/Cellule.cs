@@ -1,5 +1,6 @@
 namespace lesEchoDuNeant.Map
 {
+    // Brique de base de la carte. Chaque case est représenté par l'objet cellule
     public class Cellule
     {
         public int X{ get; set; }
