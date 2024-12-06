@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ErVYmQd8IcBUd1MRR1P8u2FJKLzPs7km5Zm5YsxpDTo=",
+  "Hash": "0H5AHYLuSPGAnPV/FtSz2DIxrOEYMSzCnE88f9+szCQ=",
   "Source": "lesEchoDuNeant",
   "BasePath": "_content/lesEchoDuNeant",
   "Mode": "Default",
@@ -283,6 +283,25 @@
       "OriginalItemSpec": "wwwroot/favicon.ico"
     },
     {
+      "Identity": "/home/blacky/Documents/Etudes/Bac/2_ieme/Progra/C#/Exo_second_2/lesEchoDuNeant/wwwroot/images/archer.png",
+      "SourceId": "lesEchoDuNeant",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/blacky/Documents/Etudes/Bac/2_ieme/Progra/C#/Exo_second_2/lesEchoDuNeant/wwwroot/",
+      "BasePath": "_content/lesEchoDuNeant",
+      "RelativePath": "images/archer.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/archer.png"
+    },
+    {
       "Identity": "/home/blacky/Documents/Etudes/Bac/2_ieme/Progra/C#/Exo_second_2/lesEchoDuNeant/wwwroot/images/eau.webp",
       "SourceId": "lesEchoDuNeant",
       "SourceType": "Discovered",
@@ -302,6 +321,25 @@
       "OriginalItemSpec": "wwwroot/images/eau.webp"
     },
     {
+      "Identity": "/home/blacky/Documents/Etudes/Bac/2_ieme/Progra/C#/Exo_second_2/lesEchoDuNeant/wwwroot/images/guerrier.png",
+      "SourceId": "lesEchoDuNeant",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/blacky/Documents/Etudes/Bac/2_ieme/Progra/C#/Exo_second_2/lesEchoDuNeant/wwwroot/",
+      "BasePath": "_content/lesEchoDuNeant",
+      "RelativePath": "images/guerrier.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/guerrier.png"
+    },
+    {
       "Identity": "/home/blacky/Documents/Etudes/Bac/2_ieme/Progra/C#/Exo_second_2/lesEchoDuNeant/wwwroot/images/herbe.webp",
       "SourceId": "lesEchoDuNeant",
       "SourceType": "Discovered",
@@ -319,6 +357,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/images/herbe.webp"
+    },
+    {
+      "Identity": "/home/blacky/Documents/Etudes/Bac/2_ieme/Progra/C#/Exo_second_2/lesEchoDuNeant/wwwroot/images/mage.png",
+      "SourceId": "lesEchoDuNeant",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/blacky/Documents/Etudes/Bac/2_ieme/Progra/C#/Exo_second_2/lesEchoDuNeant/wwwroot/",
+      "BasePath": "_content/lesEchoDuNeant",
+      "RelativePath": "images/mage.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/mage.png"
     },
     {
       "Identity": "/home/blacky/Documents/Etudes/Bac/2_ieme/Progra/C#/Exo_second_2/lesEchoDuNeant/wwwroot/images/montagne.webp",

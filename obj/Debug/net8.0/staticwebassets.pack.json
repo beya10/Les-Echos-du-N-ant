@@ -57,12 +57,24 @@
       "PackagePath": "staticwebassets/favicon.ico"
     },
     {
+      "Id": "/home/blacky/Documents/Etudes/Bac/2_ieme/Progra/C#/Exo_second_2/lesEchoDuNeant/wwwroot/images/archer.png",
+      "PackagePath": "staticwebassets/images/archer.png"
+    },
+    {
       "Id": "/home/blacky/Documents/Etudes/Bac/2_ieme/Progra/C#/Exo_second_2/lesEchoDuNeant/wwwroot/images/eau.webp",
       "PackagePath": "staticwebassets/images/eau.webp"
     },
     {
+      "Id": "/home/blacky/Documents/Etudes/Bac/2_ieme/Progra/C#/Exo_second_2/lesEchoDuNeant/wwwroot/images/guerrier.png",
+      "PackagePath": "staticwebassets/images/guerrier.png"
+    },
+    {
       "Id": "/home/blacky/Documents/Etudes/Bac/2_ieme/Progra/C#/Exo_second_2/lesEchoDuNeant/wwwroot/images/herbe.webp",
       "PackagePath": "staticwebassets/images/herbe.webp"
+    },
+    {
+      "Id": "/home/blacky/Documents/Etudes/Bac/2_ieme/Progra/C#/Exo_second_2/lesEchoDuNeant/wwwroot/images/mage.png",
+      "PackagePath": "staticwebassets/images/mage.png"
     },
     {
       "Id": "/home/blacky/Documents/Etudes/Bac/2_ieme/Progra/C#/Exo_second_2/lesEchoDuNeant/wwwroot/images/montagne.webp",

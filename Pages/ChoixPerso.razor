@@ -1,14 +1,32 @@
 @page "/choix-perso";
+@inject lesEchoDuNeant.Service.ChoixPersoService ChoixPersoService;
+@inject NavigationManager NavigationManager;
 
 <h1>Choisissez votre personnage</h1>
-<div>
-    <button @onclick='() => ChoisirPerso("Guerrier")'>Guerrier</button>
-    <button @onclick='() => ChoisirPerso("Archer")'>Archer</button>
-    <button @onclick='() => ChoisirPerso("Mage")'>Mage</button>
+<div class="personnage-container">
+    <div class="personnage-interactif" @onclick='() => ChoisirPerso("Guerrier")'>
+        <img src="/images/guerrier.png" alt="Guerrier" style="width: 150px; height: auto;">
+        <p>Guerrier</p>
+    </div>
+    <div class="personnage-interactif" @onclick='() => ChoisirPerso("Archer")'>
+        <img src="/images/archer.png" alt="Archer" style="width: 150px; height: auto;">
+        <p>Archer</p>   
+    </div>
+     <div class="personnage-interactif" @onclick='() => ChoisirPerso("Mage")'>
+        <img src="/images/mage.png" alt="Mage" style="width: 150px; height: auto; respire;">
+        <p>Mage</p>   
+    </div>
 
 </div>
 
 <p>@Message</p>
+
+<div>
+    @if (!string.IsNullOrEmpty(Message))
+    {
+        <button @onclick="ValiderChoix">Valide</button>
+    }
+</div>
 
 @code
 {
@@ -16,6 +34,12 @@
 
     private void ChoisirPerso(string personnage)
     {
-        Message = $"Vous avez choisi : {personnage}";
+        ChoixPersoService.SaveChoice(personnage);
+        Message = $"Vous avez choisis: {personnage}";
+    }
+
+    private void ValiderChoix()
+    {
+        NavigationManager.NavigateTo("/nouvelle-partie");
     }
 }

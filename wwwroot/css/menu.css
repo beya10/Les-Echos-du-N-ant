@@ -50,9 +50,55 @@ li {
     border: 0.2px solid rgba(255, 255, 255, 0.5);
     background-size: cover;
     aspect-ratio: 1; /*Garde les cellules carré*/
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /*Ajoute une animation*/
 }
 
 .map-container div:hover{
     outline: 2px solid #3498db;
     cursor: pointer; /*Change le curseur pour indiquer l'interaction*/
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /*Ajoute une ombre substile*/
+}
+
+@keyframes respire {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.15);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+
+@keyframes glowing{
+    0%{
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    }
+    50%{
+        box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+    }
+    100%{
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    }
+}
+
+.personnage-interactif{
+    animation: respire 2s infinite ease-in-out, glowing 1.5s infinite ease-in-out;/*Respiration en boucle*/
+    cursor:pointer;/*Change le curseur pour montrer que c'est interactif*/
+    transition: transform 0.2s;
+}
+
+.personnage-interactif:hover{
+    transform: scale(1.2);/*Aggrandit légérement en survol*/
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);/*Ajoute un effet lumineux*/
+}
+
+.personnage-container{
+    display: flex;
+    justify-content: center;
+    margin-top:20px;
+    gap:20px;
 }
