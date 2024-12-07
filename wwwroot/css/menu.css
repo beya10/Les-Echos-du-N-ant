@@ -1,3 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garantit que les marges et bordures sont incluses dans les dimensions */
+}
+
+
 body {
     background-color: #2c3e50;
     color: #ecf0f1;
@@ -65,7 +72,7 @@ li {
         transform: scale(1);
     }
     50%{
-        transform: scale(1.15);
+        transform: scale(1.05);
     }
     100%{
         transform: scale(1);
@@ -86,19 +93,46 @@ li {
 }
 
 .personnage-interactif{
-    animation: respire 2s infinite ease-in-out, glowing 1.5s infinite ease-in-out;/*Respiration en boucle*/
-    cursor:pointer;/*Change le curseur pour montrer que c'est interactif*/
-    transition: transform 0.2s;
+    display: inline-block;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
 }
 
-.personnage-interactif:hover{
+.personnage-interactif p{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: white;
+}
+
+.personnage-interactif img{
+    animation: respire 2s infinite ease-in-out;/*Respiration en boucle*/
+    cursor:pointer;/*Change le curseur pour montrer que c'est interactif*/
+    transition: transform 0.2s;
+    background-color: transparent;/*Pas de fond*/
+    border: none;/*Pas de bordure*/
+    box-shadow: none;/*Pas d'ombre*/
+}
+
+.personnage-interactif img:hover{
     transform: scale(1.2);/*Aggrandit légérement en survol*/
     box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);/*Ajoute un effet lumineux*/
 }
 
+.personnage-interactif, .personnage-interactif img {
+    outline: none; /* Supprime tout contour visible */
+}
+
+
 .personnage-container{
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-top:20px;
     gap:20px;
 }
