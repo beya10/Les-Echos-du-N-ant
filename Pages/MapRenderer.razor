@@ -1,14 +1,184 @@
-@using lesEchoDuNeant.Map;
-@* Composant responsable d'afficher la carte dans l'interface utilisateur *@
-<div class="map-container" style="grid-template-columns: repeat(@Map.Largeur, 1fr);">
-    @foreach (var cellule in Map.Cellules)
-    {
-        <div style="background-image: url(@cellule.Image)"></div>
-    }
-</div>
+@page "/map-renderer"
+@using lesEchoDuNeant.Map
+@using lesEchoDuNeant.Models
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JSRuntime
 
-@code
+<h3>Carte du Jeu</h3>
+
+@if (Map != null && Personnages != null)
 {
-    [Parameter]
-    public Map Map{get; set;}
+    <div class="map-container" style="grid-template-columns: repeat(@Map.Largeur, 1fr);">
+        @foreach (var cellule in Map.Cellules)
+        {
+            <div style="background-image: url(@cellule.Image)">
+                
+                @if (Map.Piege.Any(p => p.X == cellule.X && p.Y == cellule.Y))
+                {
+                    <img src="/images/piege.webp.jpg" alt="Piège" />
+                }
+                @if (Map.Coffres.Any(c => c.X == cellule.X && c.Y == cellule.Y))
+                {
+                    <img src="/images/coffre.webp.jpg" alt="Coffre" />
+                }
+            </div>
+        }
+    </div>
 }
+else
+{
+    <p>Chargement...</p>
+}
+
+@code {
+    [Parameter] public Map Map { get; set; }
+    [Parameter] public Personnages Personnages { get; set; }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            // Ajoute des écouteurs d'événements pour les touches du clavier et les clics de souris
+            await JSRuntime.InvokeVoidAsync("addKeydownListener", DotNetObjectReference.Create(this));
+            await JSRuntime.InvokeVoidAsync("addClickListener", DotNetObjectReference.Create(this));
+        }
+    }
+
+    [JSInvokable]
+    public void OnKeyDown(string key)
+    {
+        if (Map != null && Personnages != null)
+        {
+            switch (key)
+            {
+                case "ArrowUp":
+                    Personnages.Deplacer(0, -1, Map);
+                    break;
+                case "ArrowDown":
+                    Personnages.Deplacer(0, 1, Map);
+                    break;
+                case "ArrowLeft":
+                    Personnages.Deplacer(-1, 0, Map);
+                    break;
+                case "ArrowRight":
+                    Personnages.Deplacer(1, 0, Map);
+                    break;
+                case "a":
+                    Attaquer();
+                    break;
+                case "d":
+                    Defendre();
+                    break;
+            }
+            Personnages.Interagir(Map); // Interagir avec les éléments de la carte
+            StateHasChanged(); // Met à jour l'affichage après chaque action.
+        }
+    }
+
+    [JSInvokable]
+    public void OnClick(double x, double y)
+    {
+        if (Map != null && Personnages != null)
+        {
+            int cellSize = 50; // Remplacez par la taille réelle d'une cellule
+            int gridX = (int)x / cellSize;
+            int gridY = (int)y / cellSize;
+            int dx = gridX - Personnages.X;
+            int dy = gridY - Personnages.Y;
+            Personnages.Deplacer(dx, dy, Map);
+            Personnages.Interagir(Map); // Interagir avec les éléments de la carte
+            StateHasChanged(); // Met à jour l'affichage après chaque action.
+        }
+    }
+
+    private void Attaquer()
+    {
+        Console.WriteLine($"{Personnages.Nom} attaque !");
+        StateHasChanged(); // Met à jour l'affichage après chaque action.
+    }
+
+    private void Defendre()
+    {
+        Console.WriteLine($"{Personnages.Nom} se défend !");
+        StateHasChanged(); // Met à jour l'affichage après chaque action.
+    }
+}
+
+
+@* @page "/map-renderer" *@
+@* @using lesEchoDuNeant.Map *@
+@* @using lesEchoDuNeant.Models *@
+@* @inject NavigationManager NavigationManager *@
+@* @inject IJSRuntime JSRuntime *@
+@* *@
+@* <h3>Carte du Jeu</h3> *@
+@* *@
+@* <div class="map-container" style="grid-template-columns: repeat(@Map.Largeur, 1fr);" @onclick="@(e => OnClick(e.ClientX, e.ClientY))"> *@
+@*     @foreach (var cellule in Map.Cellules) *@
+@*     { *@
+@*         <div style="background-image: url(@cellule.Image)"></div> *@
+@*     } *@
+@* </div> *@
+@* *@
+@* @code { *@
+@*     [Parameter] public Map Map { get; set; } *@
+@*     [Parameter] public Personnages Personnages { get; set; } *@
+@* *@
+@*     protected override async Task OnAfterRenderAsync(bool firstRender) *@
+@*     { *@
+@*         if (firstRender) *@
+@*         { *@
+@*             await JSRuntime.InvokeVoidAsync("addKeydownListener", DotNetObjectReference.Create(this)); *@
+@*         } *@
+@*     } *@
+@* *@
+@*     [JSInvokable] *@
+@*     public void OnKeyDown(string key) *@
+@*     { *@
+@*         switch (key) *@
+@*         { *@
+@*             case "ArrowUp": *@
+@*                 Personnages.Deplacer(0, -1, Map); *@
+@*                 break; *@
+@*             case "ArrowDown": *@
+@*                 Personnages.Deplacer(0, 1, Map); *@
+@*                 break; *@
+@*             case "ArrowLeft": *@
+@*                 Personnages.Deplacer(-1, 0, Map); *@
+@*                 break; *@
+@*             case "ArrowRight": *@
+@*                 Personnages.Deplacer(1, 0, Map); *@
+@*                 break; *@
+@*             case "a": *@
+@*                 Attaquer(); *@
+@*                 break; *@
+@*             case "d": *@
+@*                 Defendre(); *@
+@*                 break; *@
+@*         } *@
+@*         StateHasChanged(); // Met à jour l'affichage après chaque action. *@
+@*     } *@
+@* *@
+@*     public void OnClick(double x, double y) *@
+@*     { *@
+@*         int cellSize = 50; // Remplacez par la taille réelle d'une cellule *@
+@*         int gridX = (int)x / cellSize; *@
+@*         int gridY = (int)y / cellSize; *@
+@*         int dx = gridX - Personnages.X; *@
+@*         int dy = gridY - Personnages.Y; *@
+@*         Personnages.Deplacer(dx, dy, Map); *@
+@*         StateHasChanged(); // Met à jour l'affichage après chaque action. *@
+@*     } *@
+@* *@
+@*     private void Attaquer() *@
+@*     { *@
+@*         Console.WriteLine($"{Personnages.Nom} attaque !"); *@
+@*         StateHasChanged(); // Met à jour l'affichage après chaque action. *@
+@*     } *@
+@* *@
+@*     private void Defendre() *@
+@*     { *@
+@*         Console.WriteLine($"{Personnages.Nom} se défend !"); *@
+@*         StateHasChanged(); // Met à jour l'affichage après chaque action. *@
+@*     } *@
+@* } *@
